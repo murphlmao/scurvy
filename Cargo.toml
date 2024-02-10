@@ -1,0 +1,12 @@
+[package]
+name = "scurvy"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "mac"
+path = "src/bin/mac.rs"
+
+[[bin]]
+name = "ip"
+path = "src/bin/ip.rs"

@@ -2,11 +2,11 @@
 
 pub mod functionality_wrapper {
     pub fn print_mac_address() {
-        crate::implement::impl_ip::testing();
+        println!("MAC address functionality")
     }
 
     pub fn print_ip_address() {
-        println!("IP address functionality");
+        crate::implement::impl_ip::process_network_interfaces();
     }
 
     pub fn display_message(message: &str) {

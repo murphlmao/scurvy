@@ -1,5 +1,5 @@
 use std::env;
-use scurvy::utils; // Adjust `your_project` to the name of your crate
+use scurvy::functionality_wrapper; // Adjust `your_project` to the name of your crate
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -15,8 +15,8 @@ fn main() {
     };
 
     match command.as_str() {
-        //"mac" | "mac.exe" => utils::print_mac_address(),
-        "ip" | "ip.exe" => utils::print_ip_address(),
-        _ => println!("Unknown command or executable name."),
+        "mac" | "mac.exe" => functionality_wrapper::print_mac_address(),
+        "ip" | "ip.exe" => functionality_wrapper::print_ip_address(),
+        _ => println!("Please provide a command."),
     }
 }

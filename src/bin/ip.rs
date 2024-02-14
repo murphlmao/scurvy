@@ -1,4 +1,4 @@
 fn main() {
 
-    scurvy::utils::print_ip_address();
+    scurvy::functionality_wrapper::print_ip_address();
 }

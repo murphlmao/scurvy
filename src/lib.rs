@@ -1,18 +1,21 @@
 // src/lib.rs
 
-pub mod utils {
-    pub fn print_mac_address(boobs: &str) {
-        // Implementation to fetch and print MAC address
-        println!("I like {}", boobs);
-        println!("MAC address functionality");
+pub mod functionality_wrapper {
+    pub fn print_mac_address() {
+        crate::implement::impl_ip::testing();
     }
 
     pub fn print_ip_address() {
-        // Implementation to fetch and print IP address
         println!("IP address functionality");
     }
 
     pub fn display_message(message: &str) {
         println!("The message is: {}", message);
     }
+}
+
+// Declare the `implement` module, which is expected to be a directory named `implement`
+// with a submodule `impl_ip` corresponding to `impl_ip.rs`.
+pub mod implement {
+    pub mod impl_ip;
 }

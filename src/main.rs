@@ -1,5 +1,5 @@
 use std::env;
-use scurvy::functionality_wrapper; // Adjust `your_project` to the name of your crate
+use scurvy::functionality_wrapper;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -10,13 +10,19 @@ fn main() {
         env::current_exe()
             .ok()
             .and_then(|path| path.file_stem()
-                .map(|name| name.to_str().unwrap_or("").to_lowercase()))
+                .map(|name| name
+                    .to_str()
+                    .unwrap_or("")
+                    .to_lowercase()
+                )
+            )
             .unwrap_or_else(|| "unknown".to_string())
     };
 
     match command.as_str() {
         "mac" | "mac.exe" => functionality_wrapper::print_mac_address(),
         "ip" | "ip.exe" => functionality_wrapper::print_ip_address(),
+        "argh" | "argh.exe" => functionality_wrapper::print_argh(),
         _ => println!("Please provide a command."),
     }
 }

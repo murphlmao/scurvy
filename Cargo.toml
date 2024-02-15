@@ -11,7 +11,9 @@ path = "src/bin/mac.rs"
 name = "ip"
 path = "src/bin/ip.rs"
 
+[[bin]]
+name = "argh"
+path = "src/bin/argh.rs"
+
 [dependencies]
-get_if_addrs = "0.5.3"
-network-interface = "1.1.1"
-pnet = "0.34.0"
+default-net = "0.21.0"

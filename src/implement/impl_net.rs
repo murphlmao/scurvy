@@ -1,3 +1,6 @@
+// network implementation functions
+
+// modules
 use default_net::interface::get_default_interface;
 use default_net::mac::MacAddr; // Import the MacAddr struct
 

@@ -17,10 +17,33 @@ pub mod functionality_wrapper {
         println!("{}", mac);
     }
 
+    pub fn print_network_info() {
+        let interface_name = get_net_info(NetInfoRequest::FriendlyName);
+        let ip = get_net_info(NetInfoRequest::IPv4Address);
+        let mac = get_net_info(NetInfoRequest::MACAddress);
+        let gw = get_net_info(NetInfoRequest::IPv4Gateway);
+        let sn = get_net_info(NetInfoRequest::IPv4Netmask);
+
+        println!("Primary Interface: {}", interface_name);
+        println!("IP Address: {}", ip);
+        println!("MAC Address: {}", mac);
+        println!("Gateway: {}", gw);
+        println!("Subnet: {}", sn);
+    }
+
     pub fn print_ip_address() {
-        // Directly use `get_net_info` and `NetInfoRequest` here.
         let ip = get_net_info(NetInfoRequest::IPv4Address);
         println!("{}", ip);
+    }
+
+    pub fn print_gateway() {
+        let gw = get_net_info(NetInfoRequest::IPv4Gateway);
+        println!("{}", gw);
+    }
+
+    pub fn print_subnet() {
+        let sn = get_net_info(NetInfoRequest::IPv4Netmask);
+        println!("{}", sn);
     }
 
     pub fn print_argh() {

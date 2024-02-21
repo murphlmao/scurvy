@@ -12,6 +12,22 @@ name = "ip"
 path = "src/bin/ip.rs"
 
 [[bin]]
+name = "sn"
+path = "src/bin/sn.rs"
+
+[[bin]]
+name = "gw"
+path = "src/bin/gw.rs"
+
+[[bin]]
+name = "net"
+path = "src/bin/net.rs"
+
+[[bin]]
+name = "dt"
+path = "src/bin/dt.rs"
+
+[[bin]]
 name = "argh"
 path = "src/bin/argh.rs"
 

@@ -1,8 +1,10 @@
 // network implementation functions
 
 // modules
+use sysinfo::System;
 use default_net::interface::get_default_interface;
 use default_net::mac::MacAddr; // Import the MacAddr struct
+
 
 pub enum NetInfoRequest {
     FriendlyName,
@@ -11,6 +13,7 @@ pub enum NetInfoRequest {
     IPv4Netmask,
     IPv4Gateway,
     IPv6Address,
+    Hostname,
 }
 
 
@@ -33,5 +36,6 @@ pub fn get_net_info(request: NetInfoRequest) -> String {
         NetInfoRequest::IPv4Netmask => interface.ipv4[0].netmask.to_string(),
         NetInfoRequest::IPv4Gateway => interface.gateway.map_or("N/A".to_string(), |gateway| gateway.ip_addr.to_string()),
         NetInfoRequest::IPv6Address => interface.ipv6.iter().map(|addr| addr.to_string()).collect::<Vec<_>>().join(", "),
+        NetInfoRequest::Hostname => System::host_name().unwrap(),
     }
 }

@@ -33,3 +33,4 @@ path = "src/bin/argh.rs"
 
 [dependencies]
 default-net = "0.21.0"
+sysinfo = "0.30.5"

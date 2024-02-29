@@ -1,3 +1,5 @@
+// print directory tree
+
 use std::env;
 use std::io;
 
